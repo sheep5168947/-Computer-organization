@@ -1,0 +1,109 @@
+def dec_to_bin(dec):
+    bin = []
+    while dec / 2 > 0:
+        bin.append(str(dec % 2))
+        dec = dec // 2
+    bin.reverse()
+    return ''.join(bin)
+
+def bin_to_dec(bin_str):
+    bin = [int(n) for n in bin_str ]
+    dec = [bin[-i - 1] * math.pow(2, i) for i in range(len(bin))]
+    return int(sum(dec))
+
+f = open('memory1.txt','r')
+for char in f.read():
+    if(char != '\n'):
+            if(char != ' '):
+                op=op+char
+            if(char == ' '):
+                print(op)
+                op = ''
+
+
+
+
+
+
+import math
+
+count = 0
+pipeline = ['IF| ','ID| ','EX| ','ME| ','WB| '] 
+pipeline_time = [1,1,1,1,1]			
+state = [0,0,1,0]
+last_pineline = []
+register = '01111111111111111111111111111111'
+word     = '11111111111111111111111111111111'
+
+
+R_format_pipe = '110000010'
+lw_pipe = '000101011'
+sw_pipe = 'X0010010X'
+beq_pipe = 'X0101000X'
+for i in range(len(state)):
+    
+    if i != 0:
+        print('    '*i,end='')
+        last_pineline.append('    '*i)
+    for j in range(len(pipeline)):
+        if state[i] == 1:
+            pipeline_time[1] = 3
+        print(pipeline[j]*pipeline_time[j],end='')
+        #last_pineline.append(pipeline[j])
+    
+
+    print()
+    #last_pineline.append('\n')
+
+
+
+for i in Op:
+    print(i,end='')
+    print(Op[i])
+    if(i%4==0):
+        if(Op[i]=='lw'):
+          print('lw') 
+        if(Op[i]=='sw'):
+            print('sw')
+        if(Op[i]=='add'):
+            print('add')
+        if(Op[i]=='sub'):
+            print('sub')
+        if(Op[i]=='beq'):
+            print('beq')
+
+
+
+
+
+        if(op_count%4==0):
+            if(Op[i]=='lw'):
+                print('lw',end=' ') 
+            if(Op[i]=='sw'):
+                print('sw',end=' ')
+            if(Op[i]=='add'):
+                print('add',end=' ')
+            if(Op[i]=='sub'):
+                print('sub',end=' ')
+            if(Op[i]=='beq'):
+                print('beq',end=' ')
+
+
+
+
+
+
+
+def dec_to_bin(dec):
+    bin = []
+    while dec / 2 > 0:
+        bin.append(str(dec % 2))
+        dec = dec // 2
+    bin.reverse()
+    return ''.join(bin)
+
+def bin_to_dec(bin_str):
+    bin = [int(n) for n in bin_str ]
+    dec = [bin[-i - 1] * math.pow(2, i) for i in range(len(bin))]
+    return int(sum(dec))
+
